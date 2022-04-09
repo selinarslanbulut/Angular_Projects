@@ -59,8 +59,11 @@ export class NotesComponent implements OnInit {
   }
 
   deleteData(index: number) {
-    this.notes.splice(index, 1)
-    localStorage.setItem('notes', JSON.stringify(this.notes))
+    const alert =confirm('Silmek istediğinize emin misiniz ?')
+    if(alert==true){
+      this.notes.splice(index, 1)
+      localStorage.setItem('notes', JSON.stringify(this.notes))
+    }
   }
   getData() {
     const noteItems = localStorage.getItem('notes')
